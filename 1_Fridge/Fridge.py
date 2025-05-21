@@ -11,10 +11,12 @@ goods = {
 
 
 def add(items, title, amount, expiration_date=None):
-    expiration_date = (None if expiration_date is None else datetime.strptime(expiration_date, date_format).date())
+    expiration_date = (None if expiration_date is None else datetime.strptime(
+        expiration_date, date_format).date())
 
     if title in items:
-        list.append(items[title], {'amount': amount, 'expiration_date': expiration_date})
+        list.append(items[title], {'amount': amount,
+                    'expiration_date': expiration_date})
     else:
         items[title] = [{'amount': amount, 'expiration_date': expiration_date}]
 
